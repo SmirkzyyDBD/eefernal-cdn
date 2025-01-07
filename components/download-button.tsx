@@ -1,5 +1,6 @@
 "use client";
 
+import { LoaderCircle } from "lucide-react";
 import React, { useState } from "react";
 
 interface DownloadButtonProps {
@@ -47,7 +48,9 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ fileName }) => {
           <span className="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         </span>
         <div className="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-gray-950/50 ring-1 ring-white/10">
-          <span>{loading ? "Generating download link..." : "Download"}</span>
+          <span>
+            {loading ? <LoaderCircle className="animate-spin" /> : "Download"}
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
