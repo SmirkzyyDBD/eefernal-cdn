@@ -8,8 +8,8 @@ export default function Home() {
           Eefernal Fog CDN
         </h1>
         <p className="text-zinc-400 max-w-2xl mx-auto">
-          High-performance content delivery network for Dead by Daylight
-          resources
+          High-performance content delivery network for Eefernal Fog private
+          server
         </p>
       </header>
 
@@ -40,9 +40,7 @@ export default function Home() {
       </div>
 
       <footer className="mt-16 text-center text-sm text-zinc-500">
-        <p>
-          © {new Date().getFullYear()} Eefernal Fog CDN. All rights reserved.
-        </p>
+        <p>© {new Date().getFullYear()} Eefernal Fog. All rights reserved.</p>
       </footer>
     </div>
   );
