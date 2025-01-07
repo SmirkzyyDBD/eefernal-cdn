@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     "High-performance content delivery network for Dead by Daylight resources.",
   keywords: "CDN, Dead by Daylight, gaming, downloads, fast delivery",
   authors: [{ name: "Eefernal Fog" }],
+};
+
+export const viewport: Viewport = {
   themeColor: "#000000",
 };
 
