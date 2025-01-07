@@ -1,44 +1,60 @@
-import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3'
-import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { NextRequest } from "next/server";
 
 interface SignedUrlResponse {
-    url: string;
+  url: string;
 }
 
-export async function GET(req: Response): Promise<Response> {
-    const { searchParams } = new URL(req.url);
-    const fileName = searchParams.get('fileName');
+// Custom error type to handle S3 errors
+type S3Error = {
+  message: string;
+  code?: string;
+  statusCode?: number;
+};
 
-    if(!fileName) {
-        return new Response("File name is required", { status: 400 });
-    }
+export async function GET(request: NextRequest): Promise<Response> {
+  const { searchParams } = new URL(request.url);
+  const fileName = searchParams.get("fileName");
 
-    const s3Client = new S3Client({
-        region: 'auto',
-        endpoint: process.env.R2_ENDPOINT!,
-        credentials: {
-            accessKeyId: process.env.R2_ACCESS_KEY!,
-            secretAccessKey: process.env.R2_SECRET_KEY!
-        },
-        forcePathStyle: true,
+  if (!fileName) {
+    return new Response("File name is required", { status: 400 });
+  }
+
+  const s3Client = new S3Client({
+    region: "auto",
+    endpoint: process.env.R2_ENDPOINT!,
+    credentials: {
+      accessKeyId: process.env.R2_ACCESS_KEY!,
+      secretAccessKey: process.env.R2_SECRET_KEY!,
+    },
+    forcePathStyle: true,
+  });
+
+  try {
+    const command = new GetObjectCommand({
+      Bucket: process.env.R2_BUCKET_NAME!,
+      Key: fileName,
     });
 
-    try {
-        const command = new GetObjectCommand({
-            Bucket: process.env.R2_BUCKET_NAME!,
-            Key: fileName,
-        });
+    const signedUrl = await getSignedUrl(s3Client, command, {
+      expiresIn: 60 * 5,
+    });
 
+    const responseBody: SignedUrlResponse = { url: signedUrl };
+    return new Response(JSON.stringify(responseBody), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error: unknown) {
+    console.error("Error generating signed URL", error);
 
-        const signedUrl = await getSignedUrl(s3Client, command, { expiresIn: 60 * 5})
+    // Type guard to check if error is our expected type
+    const s3Error = error as S3Error;
+    const errorMessage = s3Error.message || "Error generating signed URL";
 
-        const responseBody: SignedUrlResponse = { url: signedUrl};
-        return new Response(JSON.stringify(responseBody), {
-            status: 200, // OK
-            headers: { "Content-Type": "application/json"},
-        });
-    } catch (error: any) {
-        console.error('Error generating signed URL', error);
-        return new Response("Error generating signed URL", { status: 500 });
-    }
+    return new Response(errorMessage, {
+      status: s3Error.statusCode || 500,
+    });
+  }
 }
