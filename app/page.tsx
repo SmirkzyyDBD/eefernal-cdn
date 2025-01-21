@@ -34,7 +34,7 @@ export default function Home() {
             <div className="text-sm text-zinc-400 mb-6">
               Essential patch files for optimal performance
             </div>
-            <DownloadButton fileName="patchFiles.7z" />
+            <DownloadButton fileName="patchFiles_670PTB.7z" />
           </div>
         </div>
       </div>
