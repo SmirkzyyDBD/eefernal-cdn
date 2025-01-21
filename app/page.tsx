@@ -22,7 +22,7 @@ export default function Home() {
             <div className="text-sm text-zinc-400 mb-6">
               Latest version with all updates included
             </div>
-            <DownloadButton fileName="760_ptb.7z" />
+            <DownloadButton fileName="670_ptb.7z" />
           </div>
         </div>
 
