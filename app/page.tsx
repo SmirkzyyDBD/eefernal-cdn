@@ -13,28 +13,37 @@ export default function Home() {
         </p>
       </header>
 
-      <div className="w-full max-w-3xl mx-auto grid gap-8 md:grid-cols-2">
+      <div className="w-full max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
         <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors">
           <div className="text-center space-y-6">
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
               Dead by Daylight 6.7.0 PTB
             </h2>
-            <div className="text-sm text-zinc-400 mb-6">
-              Latest version with all updates included
+            <div className="space-y-4">
+              <DownloadButton fileName="670_ptb.7z" text="Game content" />
+              <DownloadButton
+                fileName="EefernalFogPSv2.3.zip"
+                text="Patch files"
+              />
             </div>
-            <DownloadButton fileName="670_ptb.7z" />
           </div>
         </div>
 
         <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors">
           <div className="text-center space-y-6">
-            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500 pb-8">
-              Patch Files
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
+              Dead by Daylight 6.7.2
             </h2>
-            <div className="text-sm text-zinc-400 mb-6">
-              Essential patch files for optimal performance
+            <div className="space-y-4">
+              <DownloadButton
+                fileName="DeadByDaylight6.7.2.zip"
+                text="Game content"
+              />
+              <DownloadButton
+                fileName="EefernalFogPSv3.0.zip"
+                text="Patch files"
+              />
             </div>
-            <DownloadButton fileName="patchFilesv2.2.zip" />
           </div>
         </div>
       </div>

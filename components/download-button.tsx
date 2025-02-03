@@ -5,9 +5,10 @@ import React, { useState } from "react";
 
 interface DownloadButtonProps {
   fileName: string;
+  text?: string;
 }
 
-const DownloadButton: React.FC<DownloadButtonProps> = ({ fileName }) => {
+const DownloadButton: React.FC<DownloadButtonProps> = ({ fileName, text }) => {
   const [loading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,16 +41,20 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ fileName }) => {
       <button
         onClick={handleDownload}
         disabled={loading}
-        className={`relative inline-block p-px font-semibold leading-6 text-white no-underline bg-stone-950 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 ${
+        className={`relative inline-block w-48 p-px font-semibold leading-6 text-white no-underline bg-stone-950 shadow-2xl cursor-pointer group rounded-xl shadow-zinc-900 ${
           loading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
         <span className="absolute inset-0 overflow-hidden rounded-xl">
           <span className="absolute inset-0 rounded-xl bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         </span>
-        <div className="relative z-10 flex items-center px-6 py-3 space-x-2 rounded-xl bg-gray-950/50 ring-1 ring-white/10">
+        <div className="relative z-10 flex items-center justify-center px-6 py-3 space-x-2 rounded-xl bg-gray-950/50 ring-1 ring-white/10">
           <span>
-            {loading ? <LoaderCircle className="animate-spin" /> : "Download"}
+            {loading ? (
+              <LoaderCircle className="animate-spin" />
+            ) : (
+              text || fileName
+            )}
           </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
