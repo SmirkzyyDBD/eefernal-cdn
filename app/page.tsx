@@ -22,7 +22,7 @@ export default function Home() {
             <div className="space-y-4">
               <DownloadButton fileName="670_ptb.7z" text="Game content" />
               <DownloadButton
-                fileName="EefernalFogPSv2.4.zip"
+                fileName="EefernalFogPS v2.5.zip"
                 text="Patch files"
               />
             </div>
@@ -40,7 +40,7 @@ export default function Home() {
                 text="Game content"
               />
               <DownloadButton
-                fileName="EefernalFogPSv3.2.zip"
+                fileName="EefernalFogPS v3.3.zip"
                 text="Patch files"
               />
             </div>
