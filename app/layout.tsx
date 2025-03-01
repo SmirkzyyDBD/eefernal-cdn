@@ -35,10 +35,11 @@ export default function RootLayout({
       className="bg-gradient-to-b from-black to-zinc-900 min-h-screen"
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.1),transparent)] text-white/90`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,rgba(39, 39, 39, 0.1),transparent)] text-white/90`}
       >
+        <div className="fixed inset-0 z-[-1] bg-grid-animated opacity-50" />
         <main className="relative">
-          <div className="pointer-events-none absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+          <div className="pointer-events-none absolute inset-0 bg-center" />
           {children}
         </main>
       </body>
