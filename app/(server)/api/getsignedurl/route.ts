@@ -1,6 +1,6 @@
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 interface SignedUrlResponse {
   url: string;
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest): Promise<Response> {
   const fileName = searchParams.get("fileName");
 
   if (!fileName) {
-    return new Response("File name is required", { status: 400 });
+    return new NextResponse("File name is required", { status: 400 });
   }
 
   const s3Client = new S3Client({
@@ -42,7 +42,7 @@ export async function GET(request: NextRequest): Promise<Response> {
     });
 
     const responseBody: SignedUrlResponse = { url: signedUrl };
-    return new Response(JSON.stringify(responseBody), {
+    return new NextResponse(JSON.stringify(responseBody), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
@@ -53,7 +53,7 @@ export async function GET(request: NextRequest): Promise<Response> {
     const s3Error = error as S3Error;
     const errorMessage = s3Error.message || "Error generating signed URL";
 
-    return new Response(errorMessage, {
+    return new NextResponse(errorMessage, {
       status: s3Error.statusCode || 500,
     });
   }
