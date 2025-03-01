@@ -1,4 +1,5 @@
 import DownloadButton from "@/components/download-button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -48,8 +49,36 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="mt-8 w-[728px] h-[90px] mx-auto">
+        <video
+          src="/zgbanner.webm"
+          autoPlay
+          loop
+          muted
+          className="w-full rounded-2xl max-h-48 object-cover"
+        />
+      </div>
+
       <footer className="mt-16 text-center text-sm text-zinc-500">
-        <p>© {new Date().getFullYear()} Eefernal Fog. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()}{" "}
+          <Link
+            href="https://smirkzyy.xyz"
+            target="_blank"
+            className="hover:underline"
+          >
+            Smirkzyy
+          </Link>{" "}
+          &{" "}
+          <Link
+            href="https://github.com/1w6ts"
+            target="_blank"
+            className="hover:underline"
+          >
+            1w6ts
+          </Link>
+          . All rights reserved.
+        </p>
       </footer>
     </div>
   );
