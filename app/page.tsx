@@ -1,3 +1,4 @@
+import AdBanner from "@/components/ad-banner";
 import DownloadButton from "@/components/download-button";
 import Link from "next/link";
 
@@ -49,15 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-8 w-[728px] h-[90px] mx-auto z-[999]">
-        <video
-          src="/zgbanner.webm"
-          autoPlay
-          loop
-          muted
-          className="w-full rounded-md max-h-48 object-cover shadow-md shadow-black/20"
-        />
-      </div>
+      <AdBanner />
 
       <footer className="mt-16 text-center text-sm text-zinc-500">
         <p>
