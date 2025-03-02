@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import PlausibleProvider from "next-plausible";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,18 +32,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
-      >
-        <head>
-          <script
-            defer
-            data-domain="cdn.eefernal.cc"
-            src="https://plausible.io/js/script.file-downloads.outbound-links.js"
-          ></script>
-        </head>
-        <main className="relative">{children}</main>
-      </body>
+      <PlausibleProvider domain="cdn.eefernal.cc">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+        >
+          <main className="relative">{children}</main>
+        </body>
+      </PlausibleProvider>
     </html>
   );
 }
