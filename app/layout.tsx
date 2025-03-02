@@ -30,17 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className="bg-gradient-to-b from-black to-zinc-900 min-h-screen"
-    >
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.1),transparent)] text-white/90`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
-        <main className="relative">
-          <div className="pointer-events-none absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-          {children}
-        </main>
+        <head>
+          <script
+            defer
+            data-domain="cdn.eefernal.cc"
+            src="https://plausible.io/js/script.file-downloads.outbound-links.js"
+          ></script>
+        </head>
+        <main className="relative">{children}</main>
       </body>
     </html>
   );
