@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Eefernal Fog CDN",
   description:
-    "High-performance content delivery network for Dead by Daylight resources.",
-  keywords: "CDN, Dead by Daylight, gaming, downloads, fast delivery",
+    "High-performance content delivery network for Eefernal Fog Private Server.",
+  keywords:
+    "CDN, Dead by Daylight, gaming, downloads, fast delivery, dbd, private server",
   authors: [{ name: "Eefernal Fog" }],
 };
 
