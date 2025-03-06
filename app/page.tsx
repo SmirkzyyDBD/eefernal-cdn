@@ -24,7 +24,7 @@ export default function Home() {
             <div className="space-x-2 flex items-center justify-center">
               <DownloadButton fileName="670_ptb.7z" text="Game content" />
               <DownloadButton
-                fileName="EefernalFogPSv2.6.zip"
+                fileName="EefernalFogPSDBD6.7.0PTBBeta v1.0.zip"
                 text="Patch files"
               />
             </div>
@@ -42,7 +42,7 @@ export default function Home() {
                 text="Game content"
               />
               <DownloadButton
-                fileName="EefernalFogPSv3.4.zip"
+                fileName="EefernalFogPSDBD6.7.2Betav1.0.zip"
                 text="Patch files"
               />
             </div>
