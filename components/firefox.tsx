@@ -39,8 +39,8 @@ export function FirefoxWarningDialog() {
         </DialogHeader>
         <DialogDescription className="text-center">
           <p className="mb-4">
-            We've detected that you're using Firefox. Unfortunately, Firefox is
-            not supported due to compatibility issues.
+            We&apos;ve detected that you&apos;re using Firefox. Unfortunately,
+            Firefox is not supported due to compatibility issues.
           </p>
           <p className="font-medium">
             For the best experience, please use Chrome, Brave or another
