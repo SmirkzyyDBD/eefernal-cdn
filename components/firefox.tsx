@@ -5,10 +5,12 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { AlertTriangle } from "lucide-react";
+import { Button } from "./ui/button";
 
 export function FirefoxWarningDialog() {
   const [isFirefox, setIsFirefox] = useState(false);
@@ -47,6 +49,15 @@ export function FirefoxWarningDialog() {
             Chromium-based browser.
           </p>
         </DialogDescription>
+        <DialogFooter>
+          <Button
+            className="w-full"
+            variant="default"
+            onClick={() => setOpen(false)}
+          >
+            I understand.
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
