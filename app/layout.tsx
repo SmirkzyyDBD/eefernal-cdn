@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <PlausibleProvider domain="cdn.eefernal.cc">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}

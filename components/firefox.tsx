@@ -30,7 +30,7 @@ export function FirefoxWarningDialog() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md border-red-500/50">
+      <DialogContent className="sm:max-w-md border-red-500/50 z-[9999]">
         <DialogHeader className="flex flex-col items-center">
           <AlertTriangle className="h-12 w-12 text-red-500 mb-2" />
           <DialogTitle className="text-xl text-red-500">
