@@ -1,10 +1,13 @@
 import AdBanner from "@/components/ad-banner";
 import DownloadButton from "@/components/download-button";
+import { FirefoxWarningDialog } from "@/components/firefox";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
+      <FirefoxWarningDialog />
+
       <header className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white pb-1">
           Eefernal Fog CDN
