@@ -42,7 +42,7 @@ export default function Home() {
                 text="Game content"
               />
               <DownloadButton
-                fileName="EefernalFogPSDBD6.7.2Betav1.0.zip"
+                fileName="EefernalFogPSDBD6.7.2Beta v1.0B.zip"
                 text="Patch files"
               />
             </div>
