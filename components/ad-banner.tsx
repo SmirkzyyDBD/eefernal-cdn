@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function AdBanner() {
-  const videos = ["/zgbanner.webm", "/zeitg.webm"];
+  const videos = ["/zeitg.webm", "/zgbanner.webm"];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
