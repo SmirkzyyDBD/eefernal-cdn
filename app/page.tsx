@@ -18,9 +18,23 @@ export default function Home() {
         </p>
       </header>
 
-      <div className="w-full max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
-        <div className="bg-black/55 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors duration-300">
-          <div className="text-center space-y-6">
+      <div className="w-full max-w-[90rem] mx-auto grid gap-4 md:grid-cols-3">
+        <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
+          <div className="text-center space-y-4">
+            <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
+              Dead by Daylight BETA
+            </h2>
+            <div className="space-x-2 flex items-center justify-center">
+              <DownloadButton
+                fileName="Dead By Daylight BETA (Eefernal Fog).zip"
+                text="Game content"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
+          <div className="text-center space-y-4">
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
               Dead by Daylight 6.7.0 PTB
             </h2>
@@ -34,8 +48,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-black/55 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-colors duration-300">
-          <div className="text-center space-y-6">
+        <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
+          <div className="text-center space-y-4">
             <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
               Dead by Daylight 6.7.2
             </h2>
