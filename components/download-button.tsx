@@ -6,14 +6,9 @@ import React, { useState } from "react";
 interface DownloadButtonProps {
   fileName: string;
   text?: string;
-  className?: string;
 }
 
-const DownloadButton: React.FC<DownloadButtonProps> = ({
-  fileName,
-  text,
-  className = "",
-}) => {
+const DownloadButton: React.FC<DownloadButtonProps> = ({ fileName, text }) => {
   const [loading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,22 +37,24 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({
   };
 
   return (
-    <div className={`space-y-2 ${className}`}>
+    <div className="space-y-2">
       <button
         onClick={handleDownload}
         disabled={loading}
-        className={`relative inline-flex w-full justify-center items-center px-6 py-3 space-x-2 font-semibold tracking-tight text-white rounded-xl ${
-          loading ? "opacity-50 cursor-not-allowed" : "hover:bg-white/10"
-        } transition-colors duration-300 backdrop-blur ring-1 ring-white/10`}
+        className={`relative inline-block w-48 p-px font-semibold tracking-tight text-white no-underline cursor-pointer rounded-xl ${
+          loading ? "opacity-50 cursor-not-allowed" : ""
+        }`}
       >
-        <span>
-          {loading ? (
-            <LoaderCircle className="animate-spin" />
-          ) : (
-            text || fileName
-          )}
-        </span>
-        <ChevronRight className="w-4 h-4" />
+        <div className="relative z-10 flex items-center justify-center px-6 py-3 space-x-2 rounded-xl hover:bg-white/10 transition-colors duration-300 backdrop-blur ring-1 ring-white/10">
+          <span>
+            {loading ? (
+              <LoaderCircle className="animate-spin" />
+            ) : (
+              text || fileName
+            )}
+          </span>
+          <ChevronRight className="w-4 h-4" />
+        </div>
       </button>
       {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
