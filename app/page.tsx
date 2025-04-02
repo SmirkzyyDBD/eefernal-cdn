@@ -77,7 +77,7 @@ export default function Home() {
             <div className="space-x-2 flex items-center justify-center">
               <DownloadButton fileName="670_ptb.7z" text="Game content" />
               <DownloadButton
-                fileName="EefernalFogPS DBD6.7.0PTB (Beta v1.1).zip"
+                fileName="EefernalFogPS DBD6.7.0PTB (Beta v1.2).zip"
                 text="Patch files"
               />
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
                 text="Game content"
               />
               <DownloadButton
-                fileName="EefernalFogPS-DBD6.7.2-(Beta v1.1).zip"
+                fileName="EefernalFogPS DBD6.7.2 (Beta v1.2).zip"
                 text="Patch files"
               />
             </div>
