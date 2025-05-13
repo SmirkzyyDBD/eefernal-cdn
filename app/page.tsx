@@ -98,7 +98,7 @@ export default function Home() {
                     text: "Game content",
                   },
                   {
-                    fileName: "EefernalFogPS DBD6.7.0PTB (Beta v1.2).zip",
+                    fileName: "EefernalFogPS DBD6.7.0PTB (Beta v2.0).zip",
                     text: "Patch files",
                   },
                 ]}
@@ -120,7 +120,7 @@ export default function Home() {
                     text: "Game content",
                   },
                   {
-                    fileName: "EefernalFogPS DBD6.7.2 (Beta v1.2).zip",
+                    fileName: "EefernalFogPS DBD6.7.2 (Beta v2.0).zip",
                     text: "Patch files",
                   },
                 ]}
