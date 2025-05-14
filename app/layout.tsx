@@ -1,18 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from 'next/font/google'
 import "./globals.css";
 import PlausibleProvider from "next-plausible";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+const inter = Inter({ subsets: ["latin"]})
 export const metadata: Metadata = {
   title: "Eefernal Fog CDN",
   description:
@@ -35,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <PlausibleProvider domain="cdn.eefernal.cc">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+          className={`${inter.className} antialiased min-h-screen`}
         >
           <main className="relative">{children}</main>
         </body>
