@@ -19,98 +19,21 @@ export default function Home() {
             High-performance content delivery network for Eefernal Fog private
             server
           </p>
+          <Link
+            href="/other-builds"
+            className="text-blue-400 hover:underline mt-4 inline-block"
+          >
+            View other builds →
+          </Link>
         </header>
 
-        <div className="w-full max-w-[90rem] mx-auto grid gap-4 md:grid-cols-3">
-          <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
-                Dead by Daylight ALPHA
-              </h2>
-              <DownloadDropdown
-                id="alpha"
-                title="Dead by Daylight ALPHA"
-                files={[
-                  {
-                    fileName: "Dead By Daylight ALPHA (Eefernal Fog).zip",
-                    text: "Game content",
-                  },
-                ]}
-              />
-            </div>
-          </div>
-
-          <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
-                Dead by Daylight BETA
-              </h2>
-              <DownloadDropdown
-                id="beta"
-                title="Dead by Daylight BETA"
-                files={[
-                  {
-                    fileName: "Dead By Daylight BETA (Eefernal Fog).zip",
-                    text: "Game content",
-                  },
-                ]}
-              />
-            </div>
-          </div>
-
-          <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
-                Dead by Daylight 1.2.0 DEV
-              </h2>
-              <DownloadDropdown
-                id="dev"
-                title="Dead by Daylight 1.2.0 DEV"
-                files={[
-                  {
-                    fileName: "DBD 1.2.0DEV (Game Files).zip",
-                    text: "Game content",
-                  },
-                  {
-                    fileName: "DBD 1.2.0DEV (Patch Files).zip",
-                    text: "Patch files",
-                  },
-                  {
-                    fileName: "DBD 1.2.0DEV (FModel Files).zip",
-                    text: "FModel files",
-                  },
-                ]}
-              />
-            </div>
-          </div>
-
-          <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
-                Dead by Daylight 6.7.0 PTB
-              </h2>
-              <DownloadDropdown
-                id="ptb"
-                title="Dead by Daylight 6.7.0 PTB"
-                files={[
-                  {
-                    fileName: "670_ptb.7z",
-                    text: "Game content",
-                  },
-                  {
-                    fileName: "EefernalFogPS DBD6.7.0PTB (Beta v2.1).zip",
-                    text: "Patch files",
-                  },
-                ]}
-              />
-            </div>
-          </div>
-
-          <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-6 px-12 border border-white/10 hover:border-white/20 transition-colors duration-300">
-            <div className="text-center space-y-4">
-              <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
+        <div className="w-full max-w-[90rem] mx-auto grid place-items-center">
+          <div className="bg-black/55 backdrop-blur-sm rounded-2xl py-8 px-16 border border-white/10 hover:border-white/20 transition-colors duration-300 max-w-md w-full">
+            <div className="text-center space-y-6">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-stone-500 via-white to-stone-500">
                 Dead by Daylight 6.7.2
               </h2>
+              <p className="text-white/70">Latest recommended build</p>
               <DownloadDropdown
                 id="6.7.2"
                 title="Dead by Daylight 6.7.2"
