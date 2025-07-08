@@ -43,7 +43,7 @@ export default function Home() {
                     text: "Game content",
                   },
                   {
-                    fileName: "EefernalFogPS DBD6.7.2 (Beta v2.1).zip",
+                    fileName: "EefernalFogPS DBD6.7.2 (Beta v2.2).zip",
                     text: "Patch files",
                   },
                 ]}
